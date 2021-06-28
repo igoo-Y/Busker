@@ -11,8 +11,6 @@ class Channel(core_models.TimeStampedModel):
     name = models.CharField(max_length=140)
     image = models.ImageField(upload_to="channel_photos", blank=True, null=True)
     on_air = models.BooleanField(default=False)
-    genre = models.ManyToManyField("Genre", blank=True)
-    resolution = models.ForeignKey("Resolution", on_delete=models.SET_NULL, null=True)
     channel_host = models.ForeignKey(
         "users.User",
         related_name="channel",
@@ -23,30 +21,3 @@ class Channel(core_models.TimeStampedModel):
 
     def __str__(self):
         return self.name
-
-
-class AbstractItem(core_models.TimeStampedModel):
-
-    """Abstract Item Model Definition"""
-
-    name = models.CharField(max_length=80)
-
-    class meta:
-        abstract = True
-
-    def __str__(self):
-        return self.name
-
-
-class Genre(AbstractItem):
-
-    """Genre Model Definition"""
-
-    pass
-
-
-class Resolution(AbstractItem):
-
-    """Resolution Model Definition"""
-
-    pass

@@ -11,14 +11,11 @@ class ChannelAdmin(admin.ModelAdmin):
     list_display = [
         "name",
         "channel_host",
-        "resolution",
         "on_air",
         "get_thumbnail",
     ]
 
-    list_filter = ("on_air", "genre", "resolution")
-
-    filter_horizontal = ("genre",)
+    list_filter = ("on_air",)
 
     raw_id_fields = ("channel_host",)
 
@@ -27,10 +24,3 @@ class ChannelAdmin(admin.ModelAdmin):
 
     get_thumbnail.short_description = "Thumbnail"
 
-
-@admin.register(models.Genre, models.Resolution)
-class ItemAdmin(admin.ModelAdmin):
-
-    """Item Admin Definition"""
-
-    pass
