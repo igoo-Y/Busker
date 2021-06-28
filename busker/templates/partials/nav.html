@@ -1,0 +1,27 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+      <a class="navbar-brand" href="{% url "core:home" %}"><strong>BUSKER</strong></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          {% if user.is_authenticated %}
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                {{user.nickname}}
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <li><a class="dropdown-item" href="{% url 'studios:studio' %}">내 스튜디오</a></li>
+                <li><a class="dropdown-item" href="{% url 'studios:my_page' %}">마이페이지</a></li>
+                <li><a class="dropdown-item" href="{% url 'users:logout' %}">로그아웃</a></li>
+              </ul>
+            </li>
+          {% else %}
+            <a class="nav-link" href="{% url "users:login" %}">로그인</a>
+            <a class="nav-link" href="{% url "users:sign_up" %}">회원가입</a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </nav>

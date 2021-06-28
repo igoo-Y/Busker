@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_title %}{{user.nickname}}의 스튜디오{% endblock page_title %}
+
+{% block content %}
+
+{% block my_studio %}
+<div class="container">
+  <div class="row mt-5">
+    <div class="col-3">
+        <ul class="nav flex-column">
+            <a class="nav-link text-dark" href="{% url 'studios:studio'%}"><h4>{{user.nickname}}의 스튜디오</h4></a>                
+            <li class="nav-item">
+              <a class="nav-link text-dark" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-dark" href="{% url 'studios:posts'%}">게시판</a>
+            </li>
+        </ul>
+    </div>
+    <div class="col-9">
+        <img style="width: 100%;" src="{% static 'live_app_image.jpg' %}" alt="">
+        <h3 class="mt-3">{{user.nickname}}의 스튜디오입니다!</h3>
+    </div>
+</div>
+</div>
+{% endblock %}
+{% endblock %}
