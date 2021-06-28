@@ -1,1 +1,3 @@
 # Busker
+
+pip install Pillow
