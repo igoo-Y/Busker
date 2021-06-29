@@ -3,4 +3,4 @@ from broadcasts import views as broadcast_views
 
 app_name = "core"
 
-urlpatterns = [path("", broadcast_views.home, name="home")]
+urlpatterns = [path("", broadcast_views.broadcasts_list, name="home")]

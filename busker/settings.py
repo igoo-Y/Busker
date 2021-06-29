@@ -38,9 +38,9 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "django.contrib.sites",
     "core.apps.CoreConfig",
     "users.apps.UsersConfig",
-    "channels.apps.ChannelsConfig",
     "studios.apps.StudiosConfig",
     "broadcasts.apps.BroadcastsConfig",
     "channels",
@@ -137,4 +137,6 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 AUTH_USER_MODEL = "users.User"
 
-ASGI_APPLICATION = "broadcasts.asgi.application"
+ASGI_APPLICATION = "busker.asgi.application"
+
+CHANNEL_LAYERS = {"default": {"BACKEND": "channels.layers.InMemoryChannelLayer"}}

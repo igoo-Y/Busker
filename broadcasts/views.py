@@ -2,10 +2,11 @@ from django.shortcuts import render
 from .models import Broadcast
 
 
-def home(request):
-    # broadcasts = Broadcast.objects.all()
+def broadcasts_list(request):
     return render(request, "broadcasts/broadcasts_list.html")
 
 
 def broadcast(request):
-    return render(request, "broadcasts/main.html")
+    context = {}
+
+    return render(request, "broadcasts/main.html", context=context)
