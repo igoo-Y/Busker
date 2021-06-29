@@ -1,6 +1,6 @@
 from django.urls import path
-from channels import views as channel_views
+from broadcasts import views as broadcast_views
 
 app_name = "core"
 
-urlpatterns = [path("", channel_views.home, name="home")]
+urlpatterns = [path("", broadcast_views.home, name="home")]

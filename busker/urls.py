@@ -20,6 +20,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path("", include("core.urls", namespace="core")),
     path("users/", include("users.urls", namespace="users")),
-    path("channels/", include("channels.urls", namespace="channels")),
+    path("broadcasts/", include("broadcasts.urls", namespace="broadcasts")),
     path("studios/", include("studios.urls", namespace="studios")),
 ]

@@ -1,3 +1,10 @@
 from django.shortcuts import render
+from .models import Broadcast
 
-# Create your views here.
+def home(request):
+    # broadcasts = Broadcast.objects.all()
+    return render(request, "broadcasts/broadcasts_list.html")
+
+
+def broadcast(request):
+    pass
