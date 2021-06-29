@@ -1,0 +1,48 @@
+*{box-sizing: border-box;}
+a{text-decoration: none;}
+
+svg{
+    font-size: 100px;
+
+}
+h1{
+    font-size: 50px;
+}
+
+fieldset{
+    width: 20px; margin:0 auto
+}
+
+header{
+    text-align: center;
+    padding: 0px;
+}
+
+#main{
+    flex:1;
+}
+
+html,body{
+    height: 100%;
+}
+
+body{
+    display:flex;
+    flex-direction:column;
+}
+
+
+
+aside{
+    font-family:verdana;
+    font-weight: bold;
+}
+
+#main{
+    justify-content : space-around;
+    padding: 50px;
+    font-weight: bold;
+    font-family:verdana;
+}
+
+
